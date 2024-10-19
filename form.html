@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@100..900&family=Jim+Nightshade&display=swap');
+
+        
+        h3 {
+            font-size: 45px;
+            color: #00796B;
+            text-align: center;
+            font-family: "Grenze Gotisch", serif;
+        }
+        h4 {
+            font-size: 17px;
+            color: #00796B;
+            text-align: left;
+            padding: 2px 5px;
+        }
+        .elemen {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            color: #E0F7FA;
+            justify-content: center;
+        }
+        .elemen span {
+            font-size: 16px;
+            background: #E74C3C;
+            padding: 2px 10px;
+            border-radius: 5px;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            font-size: 15px;
+            background-color: #E0F7FA;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Pengaturan container form */
+        /* .form-container {
+            background-color: #A5D6A7;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        } */
+        .form-container {
+            background-color: #A5D6A7;
+            width: 50%; /* Lebar form adalah 50% dari layar atau kontainer induknya */
+            max-width: 500px; /* Membatasi lebar maksimum menjadi 500px */
+            margin: 0 auto; /* Agar form berada di tengah halaman */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+        }
+
+
+        .form-container h2 {
+            margin-bottom: 20px;
+            text-align: center;
+            color: #00796B;
+        }
+
+        .form-container input[type="text"], 
+        .form-container input[type="password"] {
+            width: 96%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-container input[type="submit"],
+        .form-container input[type="reset"] {
+            width: 30%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #00796B;
+            color: white;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .form-container input[type="reset"] {
+            background-color: #E74C3C;
+        }
+
+        .form-container input[type="submit"]:hover,
+        .form-container input[type="reset"]:hover {
+            opacity: 0.7;
+        }
+        
+
+        /* Tombol untuk menampilkan form registrasi */
+        .register-btn {
+            width: 30%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #00796B;
+            color: white;
+            cursor: pointer;
+            margin-top: 10px
+        }
+
+        /* Form registrasi disembunyikan */
+        .register-container {
+            display: none;
+        }
+
+        .form span, .label span, .input span, .button span  {
+            font-size: 14px;
+            color: white;
+            background: #E74C3C;
+            padding: 2px 5px;
+            border-radius: 5px;
+            margin-left: 10px; /*biar ga terlalu mepet kiri*/
+        }
+        .tutor h3 {
+            font-size: 18px;
+            color: #00796B;
+            text-align: left;
+            font-family: "Poppins", sans-serif;
+            margin-left: 10px; /*biar ga terlalu mepet kiri*/
+        }
+        .tutor h4 {
+            font-size: 15px;
+            color: #E74C3C;
+            text-align: left;
+            margin-top: 0px;
+            margin-bottom: 5px;
+            margin-left: 10px; /*biar ga terlalu mepet kiri*/
+        }
+
+        .tutor p {
+            font-size: 14px;
+            color: #00796B;
+            margin-top: 0px;
+            margin-left: 10px; /*biar ga terlalu mepet kiri*/
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div>
+        <h3>Tutorial Membuat Form</h3>
+        <h4>Dalam membuat sebuah form pada HTML,tentunya membutuhkan elemen-elemen agar form tertata dengan rapi sesuai keinginan.
+            Berikut elemen-elemen yang digunakan untuk membuat form sederhana pada HTML : </h4>
+
+            <div class="elemen"> 
+                <span> < form > </span>
+                <span> < label > </span>
+                <span> < input > </span>
+                <span> < button > </span>
+                <span> < textarea > </span>
+                <span> < option > </span>
+                <span> < select > </span>
+            </div>
+
+            <h4>Contoh Form Login & Register : </h4>
+
+        <!-- Container utama untuk form login -->
+        <div class="form-container login-container">
+            <h2>Login</h2>
+            <form action="/login" method="POST">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <div style="display: flex; justify-content: space-between;">
+                    <input type="submit" value="Login">
+                    <input type="reset" value="Reset">
+                </div>
+            </form>
+            <input type="button" class="register-btn" value="Register" onclick="showRegisterForm()">
+        </div>
+
+        <!-- Container untuk form registrasi, disembunyikan -->
+        <div class="form-container register-container">
+            <h2>Register</h2>
+            <form action="/register" method="POST">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <div style="display: flex; justify-content: space-between;">
+                    <input type="submit" value="Register">
+                    <input type="reset" value="Reset">
+                </div>
+            </form>
+            <input type="button" class="register-btn" value="Back to Login" onclick="showLoginForm()">
+        </div>
+    </div>
+
+    <script>
+        function showRegisterForm() {
+            document.querySelector('.login-container').style.display = 'none';  // Menyembunyikan form login
+            document.querySelector('.register-container').style.display = 'block';  // Menampilkan form registrasi
+        }
+
+        function showLoginForm() {
+            document.querySelector('.register-container').style.display = 'none';  // Menyembunyikan form registrasi
+            document.querySelector('.login-container').style.display = 'block';  // Menampilkan form login
+        }
+    </script>
+    <br>
+    
+    <h4>Penjelasan Elemen : </h4> 
+
+    <div class="form">
+        <div class="tag">
+        <p><span>< form ></span> : Elemen ini adalah wadah untuk semua elemen input dalam form. Ini digunakan untuk mengirim data pengguna ke server.</p>
+    </div>
+    </div>
+    <div class="label">
+        <div class="tag">
+        <p><span>< label ></span> : Elemen ini digunakan untuk memberikan deskripsi atau penjelasan pada elemen input.</p>
+    </div>
+    <div class="input">
+        <div class="tag">
+        <p><span>< input ></span> : Elemen ini digunakan untuk mendefinisikan field atau untuk berbagai jenis input seperti teks, angka, email, password, dll. </p>
+    </div>
+    </div>
+    <div class="botton">
+        <div class="tag">
+        <p><span>< botton ></span> : Elemen ini digunakan untuk membuat tombol yang melakukan tindakan, seperti mengirim form ke server.</p>
+    </div>
+    </div>
+    <br>
+
+    <div class="tutor">
+        <h3>Langkah-Langkah Membuat FOrm Login Sederhana : </h3>
+        <h4>1. Membuat Struktur Dasar HTML</h4>
+        <p>Sebelum membuat tabel, pastikan kamu sudah menulis struktur HTML yang benar. Dokumen HTML dimulai dengan deklarasi < !DOCTYPE html >, kemudian diikuti dengan elemen < html >, < head >, dan < body >.</p>
+        <h4>2. Menambahkan Tag < form > untuk Membuat Form</h4>
+        <p>Gunakan elemen < form > sebagai wadah utama yang berisi input dari pengguna. Tentukan atribut seperti action dan method untuk mengarahkan data ke server ketika form dikirim.</p>
+        <h4>3. Membuat Input Field untuk Username dan Password</h4>
+        <p> Gunakan elemen < input > untuk membuat field input seperti username dan password. Pastikan menambahkan atribut type sesuai jenis data, seperti type="text" untuk teks dan type="password" untuk kata sandi.</p>
+        <h4>4. Menambahkan Tombol Submit dan Reset</h4>
+        <p> Gunakan elemen < input type="submit" > untuk membuat tombol "Login" atau "Register" dan < input type="reset" > untuk mengatur ulang field input. Tambahkan juga gaya CSS agar tombol terlihat menarik dan responsif.</p>
+        <h4>5. Menambahkan Tombol untuk Berpindah Antara Login dan Register</h4>
+        <p>Tambahkan tombol tambahan untuk beralih antara form login dan register, seperti < input type="button" >. Buat aksi ini dinamis dengan menggunakan fungsi Javascript yang menampilkan atau menyembunyikan form berdasarkan klik pengguna.</p>
+        <h4>6. Menambahkan Fungsi Javascript untuk Mengalihkan Form</h4>
+        <p>Buat dua fungsi Javascript: showRegisterForm() untuk menampilkan form register dan showLoginForm() untuk kembali ke form login. Gunakan metode style.display untuk mengubah visibilitas form.</p>
+        <h4>7. Membuat CSS untuk Desain Form yang Responsif</h4>
+        <p>Gunakan CSS untuk memberikan tampilan yang menarik dan responsif. Tentukan ukuran, warna, padding, dan margin untuk form, input, dan tombol agar form terlihat rapi di berbagai ukuran layar.</p>            
+        <h4>8. Finishing</h4>
+        <p>Sesuaikan hasil akhir table sesuai keinginan mu.</p>
+    </div>
+    </div>
+    <br>
+
+</body>
+</html>

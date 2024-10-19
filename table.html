@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial Membuat Table</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@100..900&family=Jim+Nightshade&display=swap');
+
+        * {
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+            font-size: 12px;
+            background-color: #E0F7FA;
+        }
+
+        h2 {
+            font-size: 45px;
+            color: #00796B;
+            text-align: center;
+            font-family: "Grenze Gotisch", serif;
+        }
+
+        h3 {
+            font-size: 17px;
+            color: #00796B;
+            text-align: left;
+        }
+        
+        .elemen {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            color: #E0F7FA;
+            justify-content: center;
+        }
+        .elemen span {
+            font-size: 16px;
+            background: #E74C3C;
+            padding: 2px 10px;
+            border-radius: 5px;
+        }
+
+        table {
+            width: 100%; 
+            border-collapse: collapse; /* menggabungkan antar cell */
+        }
+        th, td {
+            border: 1px solid #00796B;
+            padding: 8px;
+            text-align: left; /* menyelaraskan teks ke kiri */
+        }
+        th {
+            background-color: #A5D6A7; /* warna tabel header th = table header */
+        }
+        .tabel span, .tablerow span, .tablehead span, .tabledata span, .tbody span, .thead span {
+            font-size: 14px;
+            color: white;
+            background: #E74C3C;
+            padding: 2px 5px;
+            border-radius: 5px;
+        }
+
+        .tag  p  {
+            font-size: 14px;
+            color: #00796B;
+        }
+
+        .tutor h3 {
+            font-size: 18px;
+            color: #00796B;
+            text-align: left;
+        }
+        .tutor h4 {
+            font-size: 15px;
+            color: #E74C3C;
+            text-align: left;
+            margin-top: 0px;
+            margin-bottom: 5px;
+        }
+
+        .tutor p {
+            font-size: 14px;
+            color: #00796B;
+            margin-top: 0px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h2>Tutorial Membuat Table</h2>
+    
+    <h3>Ketika membuat sebuah tabel, ada beberapa elemen dasar yang perlu diketahui. Elemen-elemen ini akan membantu agar tabel tertata dengan baik dan rapi di halaman web. Berikut elemen-elemen yang digunakan untuk membuat tabel sederhana pada HTML :</h3>
+
+    <div class="elemen"> 
+        <span> < table > </span>
+        <span> < thead > </span>
+        <span> < tbody > </span>
+        <span> < tr > </span>
+        <span> < th > </span>
+        <span> < td > </span>
+      </div>
+
+      <h3>Contoh Tabel Sederhana : </h3>
+
+    <table>
+        <thead>
+            <!-- header -->
+            <tr> <!-- tr kebawah, td isi, th kesamping -->
+                <th>NIM</th>
+                <th>Nama</th>
+                <th>IPK Semester 1</th>
+                <th>IPK Semester 2</th>
+                <th>IPK Semester 3</th>
+                <th>IPK Semester 4</th>
+                <th>IPK Semester 5</th>
+                <th>IPK Semester 6</th>
+                <th>IPK Semester 7</th>
+                <th>IPK Semester 8</th>
+                <th>Jurusan</th>
+                <th>Fakultas</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <!-- isi table menggunakan td -->
+                <td>5200311014</td>
+                <td>Tresnafa Priagus</td>
+                <td>3.80</td>
+                <td>3.85</td>
+                <td>3.85</td>
+                <td>4.00</td>
+                <td>4.00</td>
+                <td>4.00</td>
+                <td>4.00</td>
+                <td>4.00</td>
+                <td>Sistem Informasi</td>
+                <td>Sains dan Teknologi</td>
+            </tr>
+            <tr>
+                <td>5200611150</td>
+                <td>Ocean Radelvan</td>
+                <td>3.65</td>
+                <td>3.73</td>
+                <td>3.86</td>
+                <td>3.59</td>
+                <td>3.90</td>
+                <td>3.70</td>
+                <td>3.90</td>
+                <td>4.00</td>
+                <td>Teknik Industri</td>
+                <td>Sains dan Teknologi</td>
+            </tr>
+            <tr>
+                <td>5201511210</td>
+                <td>Sky Alastair</td>
+                <td>3.58</td>
+                <td>3.65</td>
+                <td>3.65</td>
+                <td>3.70</td>
+                <td>3.73</td>
+                <td>3.85</td>
+                <td>3.90</td>
+                <td>3.93</td>
+                <td>PWK</td>
+                <td>Sains dan Teknologi</td>
+            </tr>
+            <tr>
+                <td>5200311190</td>
+                <td>Keenan Abiyasa</td>
+                <td>3.85</td>
+                <td>3.85</td>
+                <td>3.73</td>
+                <td>3.90</td>
+                <td>4.00</td>
+                <td>3.85</td>
+                <td>3.93</td>
+                <td>4.00</td>
+                <td>Sistem Informasi</td>
+                <td>Sains dan Teknologi</td>
+            </tr>
+            <tr>
+                <td>5201111119</td>
+                <td>Tanisha Vihokratana</td>
+                <td>3.85</td>
+                <td>3.70</td>
+                <td>3.64</td>
+                <td>3.73</td>
+                <td>3.93</td>
+                <td>3.73</td>
+                <td>3.90</td>
+                <td>3.90</td>
+                <td>Psikologi</td>
+                <td>Bisnis dan Humaniora</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+
+    <h3>Penjelasan Elemen : </h3>
+
+    <div class="tabel">
+        <div class="tag">
+        <p><span>< table ></span> : Elemen ini merupakan elemen utama yang mendefinisikan tabel. Semua elemen tabel, seperti header, baris, dan sel, berada di dalam tag ini</p>
+    </div>
+    </div>
+    <div class="thead">
+        <div class="tag">
+        <p><span>< thead ></span> : Elemen ini digunakan untuk mengelompokkan bagian kepala atau judul kolom dari tabel.</p>
+    </div>
+    <div class="tbody">
+        <div class="tag">
+        <p><span>< tbody ></span> : Elemen ini digunakan untuk mengelompokkan isi atau data dari tabel. Elemen ini digunakan untuk memisahkan isi tabel dari judul kolom yang ada di elemen thead.</p>
+    </div>
+    </div>
+    <div class="tablerow">
+        <div class="tag">
+        <p><span>< tr ></span> : Elemen ini digunakan untuk mendefinisikan atau membuat baris dalam tabel.</p>
+    </div>
+    </div>
+    <div class="tablehead">
+        <div class="tag">
+        <p><span>< th ></span> : Elemen ini digunakan untuk membuat sel header dalam tabel. Biasanya, elemen ini digunakan untuk mendefinisikan judul setiap kolom.</p>
+    </div>
+    </div>
+    <div class="tabledata">
+        <div class="tag">
+        <p><span>< td ></span> : Elemen ini digunakan untuk mendefinisikan sel data dalam tabel. Setiap elemen ini merepresentasikan sebuah data di dalam tabel.</p>
+    </div>
+    </div>
+    <br>
+    
+    <div class="tutor">
+    <h3>Langkah-Langkah Membuat Table Sederhana : </h3>
+    <h4>1. Membuat Struktur Dasar HTML</h4>
+    <p>Sebelum membuat tabel, pastikan kamu sudah menulis struktur HTML yang benar. Dokumen HTML dimulai dengan deklarasi < !DOCTYPE html >, kemudian diikuti dengan elemen < html >, < head >, dan < body >.</p>
+    <h4>2. Membuat Tabel Menggunakan Tag < table > </h4>
+    <p>Tabel dalam HTML dibuat menggunakan tag < table >. Di dalam tag < table >, terdapat elemen-elemen lain yang menyusun baris, kolom, dan sel tabel. Elemen-elemen ini sudah dijelaskan diatas.</p>
+    <h4>3. Mengisi Data kedalam Tabel</h4>
+    <p> - Mengisi data judul kolom dilakukan di dalam elemen < th > yang berada di dalam elemen < thead >. Elemen ini digunakan untuk menampilkan judul setiap kolom, seperti "NIM", "Nama", "IPK", dan lainnya. <br>
+        - Mengisi data di setiap kolom dilakukan di dalam elemen < td >. Elemen < td > digunakan untuk memasukkan nilai atau data yang sesuai dengan judul kolom, seperti NIM, Nama, IPK per semester, dan lain-lain.<br>
+        - Mengganti baris data menggunakan elemen < tr >. Elemen < tr > ini berfungsi untuk membuat baris baru dalam tabel, sehingga kamu bisa memasukkan data mahasiswa berikutnya atau baris data tambahan.
+    </p>
+    <h4>4. Menerapkan Style CSS pada Tabel</h4>
+    <p> Agar tampilan tabel lebih menarik dan mudah dibaca, kita bisa menambahkan CSS untuk mengatur desainnya. Dengan CSS, kamu bisa mengubah warna, jarak antar teks, hingga bentuk tabel.<br>
+    Salah satu CSS yang penting adalah "border-collapse: collapse", CSS ini digunakan untuk menggabungkan antar cell </p>
+    <h4>5. Finishing</h4>
+    <p>Sesuaikan hasil akhir table sesuai keinginan mu.</p>
+    </div>
+    </div>
+    
+
+</body>
+</html>
