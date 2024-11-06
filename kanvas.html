@@ -1,35 +1,417 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <p>Pilih gambar :</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- //elemen gambar yang sumbernya akan digambar/ -->
-    <img 
-    id="gambar" 
-    src="assets/images/nafaa.png" 
-    alt="Gambar" 
-    width="220" 
-    height="220">
+    <!-- --------- UNICONS ---------- -->
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
 
-    <p>Mengisi : </p>
+    <!-- --------- CSS ---------- -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- --------- FAVICON ---------- -->
+    <link
+      rel="shortcut icon"
+      href="assets/images/favicon.png"
+      type="image/x-icon"/>
+    <title>Tutorial</title>
+    <style>
+        
+    @import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@100..900&family=Jim+Nightshade&display=swap');
+        body {
+            font-family: "Poppins", sans-serif;
+            display: flex;
+            background-color: #E0F7FA;
+        }
+        
+        .canvas-container {
+            width: 600px; /* Atur lebar kontainer sesuai kebutuhan */
+            border: 2px solid #00796B; /* Border color for the container */
+            padding: 20px; /* Padding inside the container */
+            border-radius: 5px; /* Round corners */
+            background-color: #A5D6A7; /* Background color for the entire container */
+            display: flex;
+            flex-direction: column; /* Stack items vertically */
+            align-items: center; /* Center content horizontally */
+            margin: auto;
+        }
+
+        canvas {
+            border: 3px solid #00796B;
+            background-color: #E0F7FA;
+            margin-top: 10px;
+        }
+        button {
+            margin-top: 10px;
+            background-color: #E74C3C; /* Warna merah untuk latar belakang */
+            color: white; /* Warna teks putih */
+            border: none; /* Menghapus border default */
+            padding: 10px 20px; /* Padding untuk tombol */
+            border-radius: 5px; /* Sudut yang membulat */
+            align-items: center;
+            cursor: pointer; /* Mengubah kursor saat hover */
+        }
+
+        button:hover {
+            background-color: #C0392B; /* Warna latar belakang saat hover */
+        }
+
+        h2 {
+            font-size: 45px;
+            color: #00796B;
+            font-family: "Grenze Gotisch", serif;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 20px;
+            color: #E74C3C;
+            margin-top: -20px;
+            margin-left: 10px;
+            margin-bottom: 5px;
+            text-align: left;
+            width: 100%;
+            text-align: justify;
+        }
+
+        h4 {
+            font-size: 17px;
+            color: #E74C3C;
+            margin-top: 0px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            text-align: left;
+            width: 100%;
+        }
+
+        h5 {
+            font-size: 17px;
+            color: #00796B;
+            margin-top: 0px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            text-align: left;
+            width: 100%;
+        }
+
+        p {
+            font-size: 15px;
+            color: #00796B;
+            margin-top: 0px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            text-align: left;
+            width: 100%;
+        }
+
+        p, h3, h4, h5 {
+        text-align: justify;
+        }
+
+        .canvas-container p {
+            font-family: "Poppins", sans-serif;
+            font-size: 18px;
+            color: #00796B;
+            margin-top: 0;
+            margin-left: 10px; /*biar ga terlalu mepet kiri*/
+        }
+
+        .code-block {
+            background-color: #00796B;
+            border: 1px solid #A5D6A7;
+            padding: 5px;
+            overflow: auto;
+            border-radius: 4px;
+            white-space: pre;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+            line-height: 0.5;
+            margin-left: 25px;
+            margin-bottom: 10px;
+            white-space: pre;
+            max-width: fit-content;
+        }
+        .code-block code {
+            color: #f8f8f8;
+            font-family: monospace;
+        }
+
+        .tutor p {
+            font-size: 15px;
+            color: #00796B;
+            margin-top: 0;
+            margin-left: 25px; /*biar ga terlalu mepet kiri*/
+        }
+        footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        row-gap: 25px;
+        background: #f8f8f8;
+        padding-block: 40px 60px;
+        }
+        .top-footer p {
+        font-size: 25px;
+        font-weight: 600;
+        }
+        .middle-footer .footer-menu {
+        display: flex;
+        }
+        .footer_menu_list {
+        list-style: none;
+        }
+        .footer_menu_list a {
+        text-decoration: none;
+        color: var(--text-color-second);
+        font-weight: 500;
+        margin-inline: 20px;
+        font-size: 15px;
+        }
+        .footer-social-icons {
+        display: flex;
+        gap: 30px;
+        }
+        .bottom-footer {
+        font-size: 15px;
+        margin-top: 10px;
+        }        
+        .wrapper {
+            margin: auto;
+            padding: 0;
+            padding-right: 20px;
+        }
+        
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- --------------- HEADER --------------- -->
+      <nav id="header">
+        <div class="nav-logo">
+          <p class="nav-name">Canvas</p>
+          <span>.</span>
+        </div>
+        <div class="nav-menu" id="myNavMenu">
+          <ul class="nav_menu_list">
+            <li class="nav_list">
+              <a href="index.html" class="nav-link active-link">Home</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+              <a href="tutorial.html" class="nav-link">Tutorial</a>
+              <div class="circle"></div>
+            </li>
+          </ul>
+        </div>  
+        <div class="nav-menu-btn">
+          <i class="uil uil-bars" onclick="myMenuFunction()"></i>
+        </div>
+      </nav>
+
+      <!-- -------------- MAIN ---------------- -->
+      <main class="wrapper">
+        <section class="section" id="form">
+            <div class="top-header">
+                <h2>Tutorial Membuat Canvas</h2>
+            </div>
+
+    <h3>APASIH CANVAS ITU?</h3>
+    <p>Canvas dalam konteks HTML adalah elemen yang digunakan untuk menggambar grafik dan manipulasi gambar secara dinamis menggunakan JavaScript. Elemen < canvas > memungkinkan kamu untuk menggambar secara langsung ke dalam halaman web, membuat grafik, atau bahkan mengedit gambar.</p>
+    <br>
+    <h4><u>Markup canvas &lt;canvas&gt;</u></h4>
+    <div class="code-block">
+    <code>&lt;canvas id="kanvas" width="220" height="220"&gt;&lt;/canvas&gt;   </code>
+    </div>
+    <br>
+    <h5>Contoh Form Login & Register : </h5>
+
+    <div class="canvas-container">
+        <p><b>Pilih gambar :</b></p>
+        <!-- Menambahkan atribut onload untuk memastikan gambar dimuat -->
+        <img id="gambar" src="assets/images/nafa.png" alt="Gambar" width="220" height="220" onload="gambarDimuat()">
+        <br>
+        <p><b>Mengisi : </b></p>
+        <canvas id="kanvas" width="220" height="220">
+            Your browser does not support the HTML canvas tag.
+        </canvas>
     
-    <canvas id="kanvas" width="220" height="220"
-    style="border:1px solid #d3d3d3;">
-    Your browser does not support the HTML5 canvas tag.</canvas>
-
-    <p><button onclick="kanvas()">Try It</button></p>
+        <p>
+            <button onclick="kanvas()">Try It</button>
+            <button onclick="clearCanvas()">Clear Canvas</button>
+        </p>
+    </div>
+    
     <script>
-        function kanvas(){
+    
+        var imgLoaded = false; // Menambahkan variabel untuk menandakan gambar sudah dimuat
+    
+        // Fungsi untuk menandakan gambar sudah dimuat
+        function gambarDimuat() {
+            imgLoaded = true;
+            console.log("Gambar sudah dimuat.");
+        }
+    
+        // Fungsi untuk menggambar gambar di canvas
+        function kanvas() {
             var c = document.getElementById("kanvas");
             var ctx = c.getContext("2d");
             var img = document.getElementById("gambar");
-            ctx.drawImage(img, 0,0, c.width, c.height);
+    
+            // Pastikan gambar sudah dimuat sebelum menggambar
+            if (imgLoaded) {
+                ctx.clearRect(0, 0, c.width, c.height); // Bersihkan canvas
+    
+                // Sesuaikan ukuran gambar dengan ukuran canvas
+                ctx.drawImage(img, 0, 0, c.width, c.height); // Gambar di canvas sesuai ukuran
+            } else {
+                console.error("Gambar belum dimuat!");
+            }
         }
+    
+        // Fungsi untuk menghapus gambar dari canvas
+        function clearCanvas() {
+            var c = document.getElementById("kanvas");
+            var ctx = c.getContext("2d");
+            ctx.clearRect(0, 0, c.width, c.height); // Menghapus canvas
+        }
+    
     </script>
-</body>
+    
+    
+<br>
+<div class="tutor">
+    <h5>Langkah-Langkah Membuat Canvas di HTML : </h5>
+    <h4>1. Membuat Struktur Dasar HTML</h4>
+    <div class="code-block">
+        <code>
+&lt;!DOCTYPE html&gt;<br>
+&lt;html lang="en"&gt;<br>
+&lt;head&gt;<br>
+&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;<br>
+&nbsp;&nbsp;&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;<br>
+&nbsp;&nbsp;&lt;title&gt;Tutorial Kanvas&lt;/title&gt;<br>
+&lt;/head&gt;<br><br>
+&lt;body&gt;
+        </code>
+        </div>
+    <h4>2. Menambahkan Elemen &lt;canvas&gt;</h4>
+    <div class="code-block">
+        <code>
+&lt;canvas id="kanvas" width="220" height="220"&gt;&lt;/canvas&gt;</code>
+        </div>
+    <h4>3. Menambahkan CSS untuk Styling</h4>
+    <p> Buat CSS untuk menata tampilan elemen-elemen yang telah dibuat agar terlihat rapi. Dapat menggunakan properti seperti margin, padding, dan background-color untuk mempercantik tampilan.</p>
+    <h4>4. Menambahkan Elemen Gambar</h4>
+    <p> Di dalam elemen &lt;body&gt;, tambahkan elemen &lt;img&gt; yang akan digunakan sebagai sumber gambar yang akan digambar pada canvas.</p>
+    <div class="code-block">
+        <code>
+&lt;img id="gambar" src="assets/images/namafile.png" alt="Gambar" width="220" height="220"&gt;
+        </code>
+        </div>
+    <h4>5. Menambahkan JavaScript</h4>
+    <div class="code-block">
+        <code>
+&lt;script&gt;<br>
+&nbsp;&nbsp;var imgLoaded = false;<br>
+&nbsp;&nbsp;var img = document.getElementById("gambar");<br><br>
+        
+&nbsp;&nbsp;img.onload = function() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;imgLoaded = true; // Menandakan gambar sudah dimuat<br>
+&nbsp;&nbsp;}<br><br>
+        
+&nbsp;&nbsp;function kanvas() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;var c = document.getElementById("kanvas");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;var ctx = c.getContext("2d"); // Mengambil konteks canvas<br><br>
+</code>
+</div>
+        <h4>6. Menggambar di Canvas</h4>
+<div class="code-block">
+<code>
+function draw() {<br>
+&nbsp;&nbsp;ctx.fillStyle = "blue"; // Set warna<br>
+&nbsp;&nbsp;ctx.beginPath(); // Mulai menggambar<br>
+&nbsp;&nbsp;ctx.arc(200, 200, 50, 0, Math.PI * 2); // Buat lingkaran<br>
+&nbsp;&nbsp;ctx.fill(); // Isi lingkaran<br>
+}
+</code>
+</div>
+        <h4>7. Membersihkan Canvas (Opsional)</h4>
+        <p>Jika ingin menghapus gambar atau membersihkan canvas, gunakan <b>clearRect</b> untuk menghapus konten di dalam area tertentu:</p>
+        <div class="code-block">
+        <code>
+&nbsp;&nbsp;function clearCanvas() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ctx.clearRect(0, 0, c.width, c.height);<br>
+&nbsp;&nbsp;}<br>
+&lt;/script&gt;
+        </code>
+        </div>
+    <h4>6. Finish</h4>
+</div>
+</section>
+</main>
+
+      </main>
+
+      <!-- --------------- FOOTER --------------- -->
+      <footer>
+        <div class="top-footer">
+          <p>Tresnafa Priagus Pradnyasiwi Khoiruna</p>
+        </div>
+        <div class="middle-footer">
+          <ul class="footer-menu">
+            <li class="footer_menu_list">
+              <a href="#home">Home</a>
+            </li>
+            <li class="footer_menu_list">
+              <a href="#about">About</a>
+            </li>
+            <li class="footer_menu_list">
+              <a href="#projects">Projects</a>
+            </li>
+            <li class="footer_menu_list">
+              <a href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-social-icons">
+          <div class="icon">
+              <a href="https://www.instagram.com/tresnafaa" target="_blank">
+                  <i class="uil uil-instagram"></i>
+              </a>
+          </div>
+          <div class="icon">
+              <a href="https://www.linkedin.com/in/tresnafa-priagus-81056028b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
+                  <i class="uil uil-linkedin-alt"></i>
+              </a>
+          </div>
+          <div class="icon">
+              <a href="https://dribbble.com/username" target="_blank">
+                  <i class="uil uil-dribbble"></i>
+              </a>
+          </div>
+          <div class="icon">
+              <a href="https://github.com/tresnafap" target="_blank">
+                  <i class="uil uil-github-alt"></i>
+              </a>
+          </div>
+      </div>
+      
+        <div class="bottom-footer">
+          <p>
+            Copyright &copy;
+            <a href="#home" style="text-decoration: none">Tresnafa</a> - All
+            rights reserved
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- ----- MAIN JS ----- -->
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>

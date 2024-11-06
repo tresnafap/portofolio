@@ -1,33 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tutorial Membuat Table</title>
-    <style>
-    @import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@100..900&family=Jim+Nightshade&display=swap');
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        * {
-            padding: 0;
-            box-sizing: border-box;
+    <!-- --------- UNICONS ---------- -->
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
+
+    <!-- --------- CSS ---------- -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- --------- FAVICON ---------- -->
+    <link
+      rel="shortcut icon"
+      href="assets/images/favicon.png"
+      type="image/x-icon"/>
+    <title>Tutorial</title>
+    <style>
+        
+    @import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@100..900&family=Jim+Nightshade&display=swap');
+        body {
             font-family: "Poppins", sans-serif;
-            font-size: 12px;
+            display: flex;
             background-color: #E0F7FA;
         }
 
-        h2 {
-            font-size: 45px;
-            color: #00796B;
-            text-align: center;
-            font-family: "Grenze Gotisch", serif;
+        .wrapper {
+            margin: auto;
+            padding: 0;
+            padding-right: 20px;
         }
 
         h3 {
+            font-size: 45px;
+            color: #00796B;
+            margin: 5px 0; /* coba nilai lebih kecil, misalnya 10px */
+            font-family: "Grenze Gotisch", serif;
+            text-align: center;
+        }
+
+        h4, h2{
             font-size: 17px;
             color: #00796B;
             text-align: left;
+            padding: 2px 5px;
+            margin-left: 10px;
+            letter-spacing: 1px;
         }
-        
+
         .elemen {
             display: flex;
             flex-wrap: wrap;
@@ -45,6 +68,7 @@
         table {
             width: 100%; 
             border-collapse: collapse; /* menggabungkan antar cell */
+            margin-left: 10px;
         }
         th, td {
             border: 1px solid #00796B;
@@ -55,11 +79,13 @@
             background-color: #A5D6A7; /* warna tabel header th = table header */
         }
         .tabel span, .tablerow span, .tablehead span, .tabledata span, .tbody span, .thead span {
-            font-size: 14px;
-            color: white;
-            background: #E74C3C;
-            padding: 2px 5px;
-            border-radius: 5px;
+        font-size: 14px;
+        color: white;
+        background: #E74C3C;
+        padding: 2px 5px;
+        border-radius: 5px;
+        margin-left: 10px;
+        margin-bottom: 20px;
         }
 
         .tag  p  {
@@ -81,29 +107,60 @@
         }
 
         .tutor p {
-            font-size: 14px;
+            font-size: 15px;
+            margin-left: 10px;
             color: #00796B;
             margin-top: 0px;
         }
-
+        
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <div class="container">
+      <!-- --------------- HEADER --------------- -->
+      <nav id="header">
+        <div class="nav-logo">
+          <p class="nav-name">Table</p>
+          <span>.</span>
+        </div>
+        <div class="nav-menu" id="myNavMenu">
+          <ul class="nav_menu_list">
+            <li class="nav_list">
+              <a href="index.html" class="nav-link active-link">Home</a>
+              <div class="circle"></div>
+            </li>
+            <li class="nav_list">
+              <a href="tutorial.html" class="nav-link">Tutorial</a>
+              <div class="circle"></div>
+            </li>
+          </ul>
+        </div>
 
-    <h2>Tutorial Membuat Table</h2>
-    
-    <h3>Ketika membuat sebuah tabel, ada beberapa elemen dasar yang perlu diketahui. Elemen-elemen ini akan membantu agar tabel tertata dengan baik dan rapi di halaman web. Berikut elemen-elemen yang digunakan untuk membuat tabel sederhana pada HTML :</h3>
+        <div class="nav-menu-btn">
+            <i class="uil uil-bars" onclick="myMenuFunction()"></i>
+          </div>
+        </nav>
+  
+        <!-- -------------- MAIN ---------------- -->
+        <main class="wrapper">
+          <section class="section" id="form">
+              <div class="top-header">
+                  <h3>Tutorial Membuat Table</h3>
+              </div>
 
+               <h4>Ketika membuat sebuah tabel, ada beberapa elemen dasar yang perlu diketahui. Elemen-elemen ini akan membantu agar tabel tertata dengan baik dan rapi di halaman web. Berikut elemen-elemen yang digunakan untuk membuat tabel sederhana pada HTML :</h4>
+
+    <br>
     <div class="elemen"> 
-        <span> < table > </span>
-        <span> < thead > </span>
-        <span> < tbody > </span>
-        <span> < tr > </span>
-        <span> < th > </span>
-        <span> < td > </span>
+        <span> &lt;table&gt; </span>
+        <span> &lt;thead&gt; </span>
+        <span> &lt;tbody&gt; </span>
+        <span> &lt;tr&gt; </span>
+        <span> &lt;th&gt; </span>
+        <span> &lt;td&gt; </span>
       </div>
 
-      <h3>Contoh Tabel Sederhana : </h3>
+      <h2>Contoh Tabel Sederhana : </h2>
 
     <table>
         <thead>
@@ -199,49 +256,49 @@
     </table>
     <br>
 
-    <h3>Penjelasan Elemen : </h3>
+    <h4>Penjelasan Elemen : </h4>
 
     <div class="tabel">
         <div class="tag">
-        <p><span>< table ></span> : Elemen ini merupakan elemen utama yang mendefinisikan tabel. Semua elemen tabel, seperti header, baris, dan sel, berada di dalam tag ini</p>
-    </div>
+        <p><span>&lt;table&gt;</span> : Elemen ini merupakan elemen utama yang mendefinisikan tabel. Semua elemen tabel, seperti header, baris, dan sel, berada di dalam tag ini</p>
+    </div><br>
     </div>
     <div class="thead">
         <div class="tag">
-        <p><span>< thead ></span> : Elemen ini digunakan untuk mengelompokkan bagian kepala atau judul kolom dari tabel.</p>
-    </div>
+        <p><span>&lt;thead&gt;</span> : Elemen ini digunakan untuk mengelompokkan bagian kepala atau judul kolom dari tabel.</p>
+    </div><br>
     <div class="tbody">
         <div class="tag">
-        <p><span>< tbody ></span> : Elemen ini digunakan untuk mengelompokkan isi atau data dari tabel. Elemen ini digunakan untuk memisahkan isi tabel dari judul kolom yang ada di elemen thead.</p>
-    </div>
+        <p><span>&lt;tbody&gt;</span> : Elemen ini digunakan untuk mengelompokkan isi atau data dari tabel. Elemen ini digunakan untuk memisahkan isi tabel dari judul kolom yang ada di elemen thead.</p>
+    </div><br>
     </div>
     <div class="tablerow">
         <div class="tag">
-        <p><span>< tr ></span> : Elemen ini digunakan untuk mendefinisikan atau membuat baris dalam tabel.</p>
-    </div>
+        <p><span>&lt;tr&gt;</span> : Elemen ini digunakan untuk mendefinisikan atau membuat baris dalam tabel.</p>
+    </div><br>
     </div>
     <div class="tablehead">
         <div class="tag">
-        <p><span>< th ></span> : Elemen ini digunakan untuk membuat sel header dalam tabel. Biasanya, elemen ini digunakan untuk mendefinisikan judul setiap kolom.</p>
-    </div>
+        <p><span>&lt;th&gt;</span> : Elemen ini digunakan untuk membuat sel header dalam tabel. Biasanya, elemen ini digunakan untuk mendefinisikan judul setiap kolom.</p>
+    </div><br>
     </div>
     <div class="tabledata">
         <div class="tag">
-        <p><span>< td ></span> : Elemen ini digunakan untuk mendefinisikan sel data dalam tabel. Setiap elemen ini merepresentasikan sebuah data di dalam tabel.</p>
+        <p><span>&lt;td&gt;</span> : Elemen ini digunakan untuk mendefinisikan sel data dalam tabel. Setiap elemen ini merepresentasikan sebuah data di dalam tabel.</p>
     </div>
     </div>
     <br>
     
     <div class="tutor">
-    <h3>Langkah-Langkah Membuat Table Sederhana : </h3>
+    <h2>Langkah-Langkah Membuat Table Sederhana : </h2>
     <h4>1. Membuat Struktur Dasar HTML</h4>
-    <p>Sebelum membuat tabel, pastikan kamu sudah menulis struktur HTML yang benar. Dokumen HTML dimulai dengan deklarasi < !DOCTYPE html >, kemudian diikuti dengan elemen < html >, < head >, dan < body >.</p>
-    <h4>2. Membuat Tabel Menggunakan Tag < table > </h4>
-    <p>Tabel dalam HTML dibuat menggunakan tag < table >. Di dalam tag < table >, terdapat elemen-elemen lain yang menyusun baris, kolom, dan sel tabel. Elemen-elemen ini sudah dijelaskan diatas.</p>
+    <p>Sebelum membuat tabel, pastikan kamu sudah menulis struktur HTML yang benar. Dokumen HTML dimulai dengan deklarasi  &lt;!DOCTYPE html&gt;, kemudian diikuti dengan elemen  &lt;html&gt;,  &lt;head&gt;, dan &lt;body&gt;.</p>
+    <h4>2. Membuat Tabel Menggunakan Tag  &lt;table&gt; </h4>
+    <p>Tabel dalam HTML dibuat menggunakan tag &lt;table&gt;. Di dalam tag  &lt;table&gt;, terdapat elemen-elemen lain yang menyusun baris, kolom, dan sel tabel. Elemen-elemen ini sudah dijelaskan diatas.</p>
     <h4>3. Mengisi Data kedalam Tabel</h4>
-    <p> - Mengisi data judul kolom dilakukan di dalam elemen < th > yang berada di dalam elemen < thead >. Elemen ini digunakan untuk menampilkan judul setiap kolom, seperti "NIM", "Nama", "IPK", dan lainnya. <br>
-        - Mengisi data di setiap kolom dilakukan di dalam elemen < td >. Elemen < td > digunakan untuk memasukkan nilai atau data yang sesuai dengan judul kolom, seperti NIM, Nama, IPK per semester, dan lain-lain.<br>
-        - Mengganti baris data menggunakan elemen < tr >. Elemen < tr > ini berfungsi untuk membuat baris baru dalam tabel, sehingga kamu bisa memasukkan data mahasiswa berikutnya atau baris data tambahan.
+    <p> ◉ Mengisi data judul kolom dilakukan di dalam elemen &lt;th&gt; yang berada di dalam elemen &lt;thead&gt;. Elemen ini digunakan untuk menampilkan judul setiap kolom, seperti "NIM", "Nama", "IPK", dan lainnya. <br>
+        ◉ Mengisi data di setiap kolom dilakukan di dalam elemen &lt;td&gt;. Elemen < td&gt; digunakan untuk memasukkan nilai atau data yang sesuai dengan judul kolom, seperti NIM, Nama, IPK per semester, dan lain-lain.<br>
+        ◉ Mengganti baris data menggunakan elemen &lt;tr&gt;. Elemen &lt;tr&gt; ini berfungsi untuk membuat baris baru dalam tabel, sehingga kamu bisa memasukkan data mahasiswa berikutnya atau baris data tambahan.
     </p>
     <h4>4. Menerapkan Style CSS pada Tabel</h4>
     <p> Agar tampilan tabel lebih menarik dan mudah dibaca, kita bisa menambahkan CSS untuk mengatur desainnya. Dengan CSS, kamu bisa mengubah warna, jarak antar teks, hingga bentuk tabel.<br>
@@ -250,7 +307,64 @@
     <p>Sesuaikan hasil akhir table sesuai keinginan mu.</p>
     </div>
     </div>
-    
+    </section>
+    </main>   
 
-</body>
+    <!-- --------------- FOOTER --------------- -->
+    <footer>
+        <div class="top-footer">
+          <p>Tresnafa Priagus Pradnyasiwi Khoiruna</p>
+        </div>
+        <div class="middle-footer">
+          <ul class="footer-menu">
+            <li class="footer_menu_list">
+              <a href="#home">Home</a>
+            </li>
+            <li class="footer_menu_list">
+              <a href="#about">About</a>
+            </li>
+            <li class="footer_menu_list">
+              <a href="#projects">Projects</a>
+            </li>
+            <li class="footer_menu_list">
+              <a href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-social-icons">
+          <div class="icon">
+              <a href="https://www.instagram.com/tresnafaa" target="_blank">
+                  <i class="uil uil-instagram"></i>
+              </a>
+          </div>
+          <div class="icon">
+              <a href="https://www.linkedin.com/in/tresnafa-priagus-81056028b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
+                  <i class="uil uil-linkedin-alt"></i>
+              </a>
+          </div>
+          <div class="icon">
+              <a href="https://dribbble.com/username" target="_blank">
+                  <i class="uil uil-dribbble"></i>
+              </a>
+          </div>
+          <div class="icon">
+              <a href="https://github.com/tresnafap" target="_blank">
+                  <i class="uil uil-github-alt"></i>
+              </a>
+          </div>
+      </div>
+      
+        <div class="bottom-footer">
+          <p>
+            Copyright &copy;
+            <a href="#home" style="text-decoration: none">Tresnafa</a> - All
+            rights reserved
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- ----- MAIN JS ----- -->
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>

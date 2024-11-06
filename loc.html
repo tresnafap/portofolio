@@ -3,151 +3,385 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Geolocation API</title>
+
+    <!-- --------- UNICONS ---------- -->
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
+
+    <!-- --------- CSS ---------- -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- --------- FAVICON ---------- -->
+    <link
+      rel="shortcut icon"
+      href="assets/images/favicon.png"
+      type="image/x-icon"/>
+    <title>Tutorial</title>
     <style>
-      /* Body styling */
-      body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #E0F7FA;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-      }
+        
+    @import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@100..900&family=Jim+Nightshade&display=swap');
+        body {
+            font-family: "Poppins", sans-serif;
+            display: flex;
+            background-color: #E0F7FA;
+        }
+        
+        body {
+            font-family: "Poppins", sans-serif;
+            display: flex;
+            background-color: #E0F7FA;
+        }
 
-      /* Container for content */
-      .container {
-        text-align: center;
-        background-color: #A5D6A7;
-        border-radius: 15px;
-        padding: 40px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        max-width: 500px;
-        width: 100%;
-      }
+        .wrapper {
+            margin: auto;
+            padding: 0;
+            padding-right: 20px;
+        }
 
-      h1 {
-        font-size: 24px;
-        color: #333;
-        margin-bottom: 20px;
-      }
+        h3 {
+            font-size: 45px;
+            color: #00796B;
+            margin: 10px 0 10px 0;
+            font-family: "Grenze Gotisch", serif;
+            text-align: center; /* Menambahkan ini untuk memusatkan teks h3 */
+        }
 
-      /* Stylish button */
-      button {
-        background-color: #E74C3C;
-        color: #fff;
-        border: none;
-        padding: 15px 30px;
-        border-radius: 25px;
-        font-size: 16px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-      }
 
-      button:hover {
-        background-color: #E74C3C;
-      }
+        h4 {
+            font-size: 17px;
+            color: #00796B;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            text-align: left;
+            width: 100%;
+        }
 
-      /* Location result box */
-      #location {
-        margin-top: 20px;
-        padding: 20px;
-        border-radius: 15px;
-        background-color: #e9f7f9;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-        display: none;
-      }
+        h1 {
+          font-size: 24px;
+          color: #333;
+          margin-bottom: 20px;
+        }
 
-      h3 {
-        margin-bottom: 10px;
-        font-size: 20px;
-        color: #E74C3C;
-      }
+        .elemen {
+            display: flex;
+            justify-content: center; /* Memastikan elemen berada di tengah */
+            align-items: center;     /* Menyelaraskan item secara vertikal */
+            flex-wrap: wrap;        /* Membiarkan item melipat jika diperlukan */
+            gap: 10px;              /* Jarak antar elemen */
+            color: #E0F7FA;
+        }
 
-      p {
-        font-size: 16px;
-        color: #555;
-        margin: 5px 0;
-      }
+        .elemen span {
+            font-size: 16px;
+            background: #E74C3C;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        /* Container for content */
+        .containerlocation {
+            text-align: center;
+            background-color: #A5D6A7;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* Stylish button */
+        button {
+            background-color: #E74C3C;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #E74C3C;
+        }
+
+        /* Location result box */
+        #location {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 15px;
+            background-color: #e9f7f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            display: none;
+        }
+
+        p {
+            font-size: 16px;
+            color: #555;
+            margin: 5px 0;
+        }
+
+        .loc span, .posisi span, .error span, .button span  {
+            font-size: 14px;
+            color: white;
+            background: #E74C3C;
+            padding: 2px 5px;
+            border-radius: 5px;
+            text-align: center;
+            margin-left: 10px; /*biar ga terlalu mepet kiri*/
+        }
+
+        .wrapper {
+            margin: 0 auto;
+            padding: 0;
+            background-color: #E0F7FA;
+        }
+
+        .tutor h3 {
+            font-size: 18px;
+            color: #00796B;
+            text-align: left;
+            font-family: "Poppins", sans-serif;
+            margin-left: 10px; /*biar ga terlalu mepet kiri*/
+        }
+        .tutor h4 {
+            font-size: 15px;
+            color: #E74C3C;
+            text-align: left;
+            margin-top: 0px;
+            margin-bottom: 5px;
+            margin-left: 10px; /*biar ga terlalu mepet kiri*/
+        }
+
+        .tutor p {
+            font-size: 15px;
+            color: #00796B;
+            margin-top: 5px;
+            margin-left: 10px; /*biar ga terlalu mepet kiri*/
+        }
+        
     </style>
-  </head>
-  <body>
-    <div class="container">
-      <h1>Get User Location with Geolocation API</h1>
-      <button onclick="getLocation()">Get Location</button>
+    </head>
+    <body>
+      <div class="container">
+        <!-- --------------- HEADER --------------- -->
+        <nav id="header">
+          <div class="nav-logo">
+            <p class="nav-name">Geolocation</p>
+            <span>.</span>
+          </div>
+          <div class="nav-menu" id="myNavMenu">
+            <ul class="nav_menu_list">
+              <li class="nav_list">
+                <a href="index.html" class="nav-link active-link">Home</a>
+                <div class="circle"></div>
+              </li>
+              <li class="nav_list">
+                <a href="tutorial.html" class="nav-link">Tutorial</a>
+                <div class="circle"></div>
+            </ul>
+          </div>
+  
+          <div class="nav-menu-btn">
+              <i class="uil uil-bars" onclick="myMenuFunction()"></i>
+            </div>
+          </nav>
+    
+          <!-- -------------- MAIN ---------------- -->
+          <main class="wrapper">
+            <section class="section" id="form">
+                <div class="top-header">
+                    <h3>Tutorial Membuat Table</h3>
+                </div>
 
-      <div id="location">
-        <h3>Your Location:</h3>
-        <p>Latitude: <span id="latitude"></span></p>
-        <p>Longitude: <span id="longitude"></span></p>
-        <p>Accuracy: <span id="accuracy"></span> meters</p>
+                <h4>Pada membuat fitur Get Location di HTML, diperlukan beberapa fungsi JavaScript agar fitur ini bisa berfungsi dengan baik dan memberikan hasil yang diharapkan. 
+                    Berikut adalah fungsi-fungsi yang digunakan untuk membuat fitur Get Location sederhana di HTML:</h4>
+            
+                <div class="elemen"> 
+                    <span> getLocation() </span>
+                    <span> showPosition() </span>
+                    <span> showError() </span>
+                </div>
+            
+                <h4>Tampilan Fitur Get Location di HTML : </h4>
+            
+                <br>
+                
+                <div class="containerlocation">
+                    <h1>Get User Location with Geolocation API</h1>
+                    <button onclick="getLocation()">Get Location</button>
+            
+                    <div id="location">
+                        <h3>Your Location:</h3>
+                        <p>Latitude: <span id="latitude"></span></p>
+                        <p>Longitude: <span id="longitude"></span></p>
+                        <p>Accuracy: <span id="accuracy"></span> meters</p>
+                    </div>
+                </div>
+            
+                <script>
+                    // Function to get user location
+                    function getLocation() {
+                        const locationBox = document.getElementById("location");
+                        if (navigator.geolocation) {
+                            navigator.geolocation.getCurrentPosition(showPosition, showError);
+                        } else {
+                            alert("Geolocation is not supported by this browser.");
+                        }
+            
+                        // Add loading effect to the button
+                        const button = document.querySelector("button");
+                        button.innerHTML = "Getting Location...";
+                        button.disabled = true;
+                        button.style.backgroundColor = "#ccc";
+                    }
+            
+                    // Function to display position
+                    function showPosition(position) {
+                        document.getElementById("latitude").innerHTML = position.coords.latitude;
+                        document.getElementById("longitude").innerHTML = position.coords.longitude;
+                        document.getElementById("accuracy").innerHTML = position.coords.accuracy + " meters";
+            
+                        // Show the location div
+                        const locationBox = document.getElementById("location");
+                        locationBox.style.display = "block";
+            
+                        // Revert button state
+                        const button = document.querySelector("button");
+                        button.innerHTML = "Get Location";
+                        button.disabled = false;
+                        button.style.backgroundColor = "#007bff";
+                    }
+            
+                    // Function to handle errors
+                    function showError(error) {
+                        //menggunakan switch untuk berbagai kode kesalahan yang mungkin terjadi
+                        switch (error.code) {
+                            case error.PERMISSION_DENIED:
+                                alert("User denied the request for Geolocation.");
+                                break; //keluar dari fungsi
+                            case error.POSITION_UNAVAILABLE:
+                                alert("Location information is unavailable.");
+                                break;
+                            case error.TIMEOUT: 
+                                alert("The request to get user location timed out.");
+                                break;
+                            case error.UNKNOWN_ERROR:
+                                alert("An unknown error occurred.");
+                                break;
+                        }
+            
+                        //mengembalikan tombol 
+                        // Revert button state even in case of an error
+                        const button = document.querySelector("button");
+                        button.innerHTML = "Get Location";
+                        button.disabled = false;
+                        button.style.backgroundColor = "#007bff";
+                    }
+                </script>
+                <br>
+                <h4>Penjelasan Fungsi JavaScript : </h4> 
+            
+                <div class="loc">
+                    <div class="tag">
+                    <p><span> getLocation ()</span> : Fungsi ini berfungsi untuk memeriksa apakah browser mendukung Geolocation API. Jika didukung, fungsi ini akan meminta lokasi pengguna.</p>
+                </div>
+                </div>
+                <div class="posisi">
+                    <div class="tag">
+                    <p><span>showPosition()</span>  : Fungsi ini digunakan untuk menampilkan data posisi yang didapat, seperti latitude, longitude, dan accuracy di dalam elemen HTML yang sudah disiapkan.</p>
+                </div>
+                <div class="error">
+                    <div class="tag">
+                    <p><span>showError()</span>     : Fungsi ini berfungsi untuk menangani berbagai error yang mungkin terjadi, misalnya ketika pengguna menolak memberikan akses lokasi. </p>
+                </div>
+                </div>
+            
+                <br>
+            
+                <div class="tutor">
+                  <h3>Langkah-Langkah Membuat Fitur Get Location Menggunakan HTML dan JavaScript : </h3>
+                  <h4>1. Membuat Struktur Dasar HTML</h4>
+                  <p>Mulailah dengan membuat struktur dasar HTML. Gunakan elemen < html >, < head >, dan < body > untuk membangun halaman.</p>
+                  <h4>2. Menambahkan Elemen untuk Menampilkan Lokasi</h4>
+                  <p>Di dalam < body >, tambahkan elemen seperti < h1 > untuk judul, tombol < button > untuk memicu pengambilan lokasi, dan elemen < div > untuk menampilkan hasil lokasi.</p>
+                  <h4>3. Menulis CSS untuk Styling</h4>
+                  <p> Buat CSS untuk menata tampilan elemen-elemen yang telah dibuat agar terlihat rapi. Dapat menggunakan properti seperti margin, padding, dan background-color untuk mempercantik tampilan.</p>
+                  <h4>4. Mengimplementasikan Fungsi JavaScript</h4>
+                  <p> ◉ Menambahkan fungsi <b>getLocation()</b> untuk memeriksa dukungan Geolocation API dan meminta lokasi pengguna.</p>
+                  <p> ◉ Membuat fungsi <b>showPosition(position)</b> untuk menampilkan data lokasi (latitude, longitude, dan akurasi) di elemen yang sesuai.</p>
+                  <p> ◉ Menuliskan fungsi <b>showError(error)</b> untuk menangani error yang mungkin terjadi saat pengambilan lokasi.</p>
+                  <h4>5. Mengaitkan Fungsi JavaScript dengan Elemen HTML</h4>
+                  <p>Pastikan untuk menghubungkan fungsi getLocation() dengan tombol yang telah dibuat, sehingga ketika tombol ditekan, fungsi ini akan dipanggil.</p>
+                  <h4>6. Menambahkan Fungsi Javascript untuk Mengalihkan Form</h4>
+                  <p>Buat dua fungsi Javascript: showRegisterForm() untuk menampilkan form register dan showLoginForm() untuk kembali ke form login. Gunakan metode style.display untuk mengubah visibilitas form.</p>
+                  <h4>7. Menguji Fitur di Browser</h4>
+                  <p>Setelah selesai, buka file HTML di browser untuk menguji fitur Get Location. Pastikan untuk memberikan izin akses lokasi saat diminta oleh browser.</p>            
+              </div>
+              </div>
+            </section>
+        </main>   
+                <!-- --------------- FOOTER --------------- -->
+    <footer>
+        <div class="top-footer">
+          <p>Tresnafa Priagus Pradnyasiwi Khoiruna</p>
+        </div>
+        <div class="middle-footer">
+          <ul class="footer-menu">
+            <li class="footer_menu_list">
+              <a href="#home">Home</a>
+            </li>
+            <li class="footer_menu_list">
+              <a href="#about">About</a>
+            </li>
+            <li class="footer_menu_list">
+              <a href="#projects">Projects</a>
+            </li>
+            <li class="footer_menu_list">
+              <a href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-social-icons">
+          <div class="icon">
+              <a href="https://www.instagram.com/tresnafaa" target="_blank">
+                  <i class="uil uil-instagram"></i>
+              </a>
+          </div>
+          <div class="icon">
+              <a href="https://www.linkedin.com/in/tresnafa-priagus-81056028b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
+                  <i class="uil uil-linkedin-alt"></i>
+              </a>
+          </div>
+          <div class="icon">
+              <a href="https://dribbble.com/username" target="_blank">
+                  <i class="uil uil-dribbble"></i>
+              </a>
+          </div>
+          <div class="icon">
+              <a href="https://github.com/tresnafap" target="_blank">
+                  <i class="uil uil-github-alt"></i>
+              </a>
+          </div>
       </div>
+      
+        <div class="bottom-footer">
+          <p>
+            Copyright &copy;
+            <a href="#home" style="text-decoration: none">Tresnafa</a> - All
+            rights reserved
+          </p>
+        </div>
+      </footer>
     </div>
 
-    <script>
-      // Function to get user location
-      function getLocation() {
-        const locationBox = document.getElementById("location");
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(showPosition, showError);
-        } else {
-          alert("Geolocation is not supported by this browser.");
-        }
-
-        // Add loading effect to the button
-        const button = document.querySelector("button");
-        button.innerHTML = "Getting Location...";
-        button.disabled = true;
-        button.style.backgroundColor = "#ccc";
-      }
-
-      // Function to display position
-      function showPosition(position) {
-        document.getElementById("latitude").innerHTML =
-          position.coords.latitude;
-        document.getElementById("longitude").innerHTML =
-          position.coords.longitude;
-        document.getElementById("accuracy").innerHTML =
-          position.coords.accuracy + " meters";
-
-        // Show the location div
-        const locationBox = document.getElementById("location");
-        locationBox.style.display = "block";
-
-        // Revert button state
-        const button = document.querySelector("button");
-        button.innerHTML = "Get Location";
-        button.disabled = false;
-        button.style.backgroundColor = "#007bff";
-      }
-
-      // Function to handle errors
-      function showError(error) {
-        //menggunakan switch untuk berbagai kode kesalahan yang mungkin terjadi
-        switch (error.code) {
-          case error.PERMISSION_DENIED:
-            alert("User denied the request for Geolocation.");
-            break; //keluar dari fungsi
-          case error.POSITION_UNAVAILABLE:
-            alert("Location information is unavailable.");
-            break;
-          case error.TIMEOUT: 
-            alert("The request to get user location timed out.");
-            break;
-          case error.UNKNOWN_ERROR:
-            alert("An unknown error occurred.");
-            break;
-        }
-
-        //mengembalikan tombol 
-        // Revert button state even in case of an error
-        const button = document.querySelector("button");
-        button.innerHTML = "Get Location";
-        button.disabled = false;
-        button.style.backgroundColor = "#007bff";
-      }
-    </script>
-  </body>
-</html>
+    <!-- ----- MAIN JS ----- -->
+    <script src="assets/js/main.js"></script>
+            
+            </body>
+            </html>
+            

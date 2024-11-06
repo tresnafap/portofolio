@@ -200,6 +200,7 @@ nav {
   font-size: 15px;
   margin-bottom: 30px;
   color: var(--text-color-second);
+  text-align: justify;
 }
 .featured-text-btn {
   display: flex;
@@ -328,7 +329,7 @@ h3 {
   border-radius: 20px;
 }
 .about-info p {
-  text-align: center;
+  text-align: justify;
   font-size: 15px;
   color: #003B5C;
 }
@@ -499,6 +500,11 @@ textarea {
 .form-button i {
   font-size: 18px;
   rotate: -45deg;
+}
+
+.contact-info a {
+  color: inherit; /* Mengikuti warna teks elemen induk */
+  text-decoration: none; /* Menghapus underline */
 }
 
 /* ----- FOOTER BOX ----- */

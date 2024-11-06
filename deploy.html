@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- --------- UNICONS ---------- -->
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
+
+    <!-- --------- CSS ---------- -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- --------- FAVICON ---------- -->
+    <link
+      rel="shortcut icon"
+      href="assets/images/favicon.png"
+      type="image/x-icon"/>
+    <title>Tutorial</title>
+    <style>
+        
+    @import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@100..900&family=Jim+Nightshade&display=swap');
+
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+    .wrapper {
+            margin: auto;
+            padding: 0;
+            padding-right: 20px;
+        } 
+        
+    h2 {
+            font-size: 45px;
+            color: #00796B;
+            margin: 10px 0 10px 0;
+            font-family: "Grenze Gotisch", serif;
+            text-align: center; /* Menambahkan ini untuk memusatkan teks h3 */
+        } 
+    
+    p {
+            font-size: 17px;
+            color: #00796B;
+            margin: 10px 0 10px 0;
+            text-align: justify;
+            margin-left: 15px;
+        }
+    
+    h3 {
+        font-size: 17px;
+            color: #E74C3C;
+            margin: 10px 0 10px 0;
+            text-align: justify;
+            margin-left: 15px;
+    }
+
+    section ol {
+    padding-left: 50px;
+    color: #00796B;
+    }
+
+    section pre {
+    background-color: #00796B;
+    font-size: 15px;
+    border-radius: 5px;
+    font-family: monospace;
+    margin-left: 20px;
+    width: fit-content;
+    text-align: left;
+    padding: 15px;
+    padding-bottom: 5px;
+    padding-right: 15px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    color: #FFFFFF; /* Mengubah warna font menjadi putih */
+}
+.code-block {
+    position: relative;
+    height: 65px;
+    background-color: #00796B;
+    color: #E74C3C;
+    padding-top: 10px;
+    padding-bottom: 24px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    font-family: "Poppins", sans-serif;
+    text-align: justify;
+}
+
+.copy-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #A5D6A7;
+    color: #282c34;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+.copy-btn:hover {
+    background-color: #FFFFFF;
+}
+
+pre {
+    margin: 0;
+}
+    </style>
+
+</head>
+<body>
+  <div class="container">
+    <!-- --------------- HEADER --------------- -->
+    <nav id="header">
+      <div class="nav-logo">
+        <p class="nav-name">Github</p>
+        <span>.</span>
+      </div>
+      <div class="nav-menu" id="myNavMenu">
+        <ul class="nav_menu_list">
+          <li class="nav_list">
+            <a href="index.html" class="nav-link active-link">Home</a>
+            <div class="circle"></div>
+          </li>
+          <li class="nav_list">
+            <a href="tutorial.html" class="nav-link">Tutorial</a>
+            <div class="circle"></div>
+        </ul>
+      </div>
+
+      <div class="nav-menu-btn">
+        <i class="uil uil-bars" onclick="myMenuFunction()"></i>
+      </div>
+    </nav>
+
+    <main class="wrapper">
+        <section class="section" id="form">
+            <div class="top-header">
+                <h2>Tutorial Deploy Website ke GitHub</h2>
+            </div>
+
+            <section id="pengantar">
+            <p><b>Deploy website ke GitHub</b> merupakan langkah penting dalam menampilkan dan mengelola proyek web secara online. 
+                Dengan GitHub Pages, Anda dapat mempublikasikan situs web secara gratis dan mudah diakses oleh siapa saja. Di halaman ini, saya ingin berbagi langkah-langkah 
+                sederhana yang sering saya gunakan untuk mengunggah dan meng-update website melalui GitHub. Mulai dari membuat repositori, menjalankan perintah-perintah Git dasar, 
+                hingga mengonfigurasi pengaturan GitHub Pages</p><br>
+
+            <section id="step1">
+            <h3>Langkah 1 : Membuat Repositori di GitHub</h3>
+            <p>Langkah pertama adalah membuat repositori di GitHub. Ikuti langkah-langkah berikut:</p>
+            <ol>
+                <li>Masuk ke akun GitHub Anda dan klik tombol New di halaman utama untuk membuat repositori baru.</li>
+                <li>Klik tombol <strong>"New"</strong> di pojok kanan atas.</li>
+                <li>Isi nama repositori dan dan pastikan repositori disetel sebagai "Public".</li>
+                <li>Klik tombol <strong>"Create repository"</strong>.</li>
+            </ol>
+            </section><br>
+
+            <section id="step2">
+                <h3>Langkah 2 : Menyiapkan File Website di Folder Lokal</h3>
+                <p>Setelah repositori dibuat, Anda perlu menyiapkan file HTML dan CSS untuk website Anda.</p>
+                <ol>
+                    <li>Pastikan semua file HTML, CSS, JavaScript, dan aset lainnya sudah lengkap dalam satu folder di komputer Anda.</li>
+                    <li>Di dalam folder proyek ini, buat file bernama index.html karena GitHub Pages akan menjadikan file ini sebagai halaman utama.</li>
+                </ol>
+                <p>Struktur folder Anda harus seperti ini:</p>
+                <pre>
+                    my-website/
+                    ├── index.html
+                    └── style.css
+                            </pre>
+                </section><br>
+
+             <section id="step3">
+                <h3>Langkah 3 : Push Proyek ke GitHub</h3>
+                <p>Setelah proyek siap, lakukan push file Anda ke GitHub dengan langkah-langkah berikut:</p>
+                <ol>
+                    <li>Buka terminal atau command prompt, lalu navigasikan ke folder proyek.</li>
+                    <li>Inisialisasi Git di folder Anda:</li>
+                        <div class="code-block">
+                            <button class="copy-btn" onclick="copyCode(this)">Copy code</button>
+                            <pre><code>git init</code></pre>
+                        </div>
+                    <li>Tambahkan semua file proyek ke dalam repositori:</li>
+                        <div class="code-block">
+                            <button class="copy-btn" onclick="copyCode(this)">Copy code</button>
+                            <pre><code>git add .</code></pre>
+                        </div>
+                    <li>Buat commit pertama :</li>
+                        <div class="code-block">
+                            <button class="copy-btn" onclick="copyCode(this)">Copy code</button>
+                            <pre><code>git commit -m "Initial commit"</code></pre>
+                        </div>
+                    <li>Hubungkan repositori lokal dengan repositori GitHub :</li>
+                        <div class="code-block">
+                            <button class="copy-btn" onclick="copyCode(this)">Copy code</button>
+                            <pre><code>git remote add origin https://github.com/username/my-website.git</code></pre>
+                        </div>
+                    <li>Push Proyek ke GitHub :</li>
+                        <div class="code-block">
+                            <button class="copy-btn" onclick="copyCode(this)">Copy code</button>
+                            <pre><code>git push -u origin main</code></pre>
+                        </div>
+                        </ol>
+                        </section><br>
+
+                <section id="step4">
+                <h3>Langkah 4 : Aktivasi GitHub Pages</h3>
+                <p>Langkah terakhir adalah mengaktifkan GitHub Pages di repositori Anda:</p>
+                <ol>
+                    <li>Buka halaman repositori di GitHub, pilih Settings, lalu cari bagian Pages.</li>
+                    <li>Pada bagian Source, pilih <b>main branch</b> (atau <b>master branch</b>) dan klik Save.</li>
+                    <li>GitHub akan memproses dan menyediakan tautan situs web Anda. Anda bisa mengaksesnya di alamat: <i>https://username.github.io/my-website/.</i></li>
+                </ol>
+                </section>
+        </section>
+    </main>
+</div>
+</body>
+</html>
